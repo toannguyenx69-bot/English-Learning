@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  # Default datasource uses H2 in-memory for developer convenience.
+  datasource:
+    # Use DB_URL/DB_DRIVER/DB_USER/DB_PASSWORD environment variables to connect to MySQL.
+    # Example MySQL URL: jdbc:mysql://localhost:3306/english_learning
+    url: ${DB_URL:jdbc:h2:mem:devdb;DB_CLOSE_DELAY=-1;MODE=MySQL}
+    driver-class-name: ${DB_DRIVER:org.h2.Driver}
+    username: ${DB_USER:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    # Control schema generation with SPRING_JPA_HIBERNATE_DDL_AUTO env var (default: update)
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    # Enable or disable SQL logging with SPRING_JPA_SHOW_SQL (default: false)
+    show-sql: ${SPRING_JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        format_sql: true
+        # Hibernate dialect can be overridden by setting HIBERNATE_DIALECT
+        dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.MySQL8Dialect}
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
+# To use MySQL for development, set the following environment variables:
+# DB_URL=jdbc:mysql://<host>:<port>/english_learning
+# DB_DRIVER=com.mysql.cj.jdbc.Driver
+# DB_USER=<user>
+# DB_PASSWORD=<password>
+
+logging:
+  level:
+    org.springframework: INFO
