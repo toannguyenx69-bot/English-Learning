@@ -63,6 +63,16 @@ class GrammarPracticeControllerTest {
 
     @Test
     @WithMockUser(username = "john@example.com")
+    void getGrammarQuestionIdsReturnsAvailableIds() throws Exception {
+        when(grammarPracticeService.getQuestions()).thenReturn(List.of(3L, 5L, 8L));
+
+        mockMvc.perform(get("/api/v1/grammar/questions"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("[3,5,8]"));
+    }
+
+    @Test
+    @WithMockUser(username = "john@example.com")
     void submitAnswerReturnsFeedback() throws Exception {
         GrammarAnswerSubmissionRequest request = new GrammarAnswerSubmissionRequest();
         request.setAnswerId(2L);

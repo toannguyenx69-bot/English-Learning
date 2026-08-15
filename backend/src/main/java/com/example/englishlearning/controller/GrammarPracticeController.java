@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/grammar")
 public class GrammarPracticeController {
@@ -21,6 +23,11 @@ public class GrammarPracticeController {
 
     public GrammarPracticeController(GrammarPracticeService grammarPracticeService) {
         this.grammarPracticeService = grammarPracticeService;
+    }
+
+    @GetMapping("/questions")
+    public ResponseEntity<List<Long>> getQuestions() {
+        return ResponseEntity.ok(grammarPracticeService.getQuestions());
     }
 
     @GetMapping("/questions/{id}")

@@ -26,6 +26,11 @@ export type GrammarStatistics = {
   accuracyRate: number;
 };
 
+export async function getGrammarQuestionIds(): Promise<number[]> {
+  const response = await api.get<number[]>('/api/v1/grammar/questions');
+  return response.data;
+}
+
 export async function getGrammarQuestion(questionId: number): Promise<GrammarQuestion> {
   const response = await api.get<GrammarQuestion>(`/api/v1/grammar/questions/${questionId}`);
   return response.data;

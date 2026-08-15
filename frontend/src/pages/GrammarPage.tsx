@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { getGrammarQuestion, type GrammarQuestion, submitGrammarAnswer, type GrammarAnswerFeedback } from '../api/grammar';
-
-const STARTING_QUESTION_ID = 1;
+import {
+  getGrammarQuestion,
+  getGrammarQuestionIds,
+  type GrammarQuestion,
+  submitGrammarAnswer,
+  type GrammarAnswerFeedback,
+} from '../api/grammar';
 
 export default function GrammarPage() {
-  const [questionId, setQuestionId] = useState<number>(STARTING_QUESTION_ID);
+  const [questionId, setQuestionId] = useState<number | null>(null);
+  const [questionIds, setQuestionIds] = useState<number[]>([]);
+  const [questionIndex, setQuestionIndex] = useState(0);
   const [question, setQuestion] = useState<GrammarQuestion | null>(null);
   const [selectedAnswerId, setSelectedAnswerId] = useState<number | null>(null);
   const [feedback, setFeedback] = useState<GrammarAnswerFeedback | null>(null);
@@ -15,6 +21,40 @@ export default function GrammarPage() {
   const [attempts, setAttempts] = useState(0);
 
   useEffect(() => {
+    const fetchFirstValidQuestion = async () => {
+      try {
+        const ids = await getGrammarQuestionIds();
+        const validIds = ids.filter((id) => Number.isFinite(id) && id > 0).sort((a, b) => a - b);
+
+        if (validIds.length === 0) {
+          setQuestionIds([]);
+          setQuestionIndex(0);
+          setQuestionId(null);
+          setQuestion(null);
+          setError('No grammar questions available.');
+          return;
+        }
+
+        setQuestionIds(validIds);
+        setQuestionIndex(0);
+        setQuestionId(validIds[0]);
+      } catch (err) {
+        setQuestionIds([]);
+        setQuestionIndex(0);
+        setQuestionId(null);
+        setQuestion(null);
+        setError(err instanceof Error ? err.message : 'Unable to load grammar questions.');
+      }
+    };
+
+    fetchFirstValidQuestion();
+  }, []);
+
+  useEffect(() => {
+    if (questionId === null) {
+      return;
+    }
+
     const fetchQuestion = async () => {
       setLoading(true);
       setError(null);
@@ -60,7 +100,15 @@ export default function GrammarPage() {
   };
 
   const handleNextQuestion = () => {
-    setQuestionId((current) => current + 1);
+    if (questionIds.length === 0) {
+      return;
+    }
+
+    setQuestionIndex((currentIndex) => {
+      const nextIndex = currentIndex + 1 >= questionIds.length ? 0 : currentIndex + 1;
+      setQuestionId(questionIds[nextIndex]);
+      return nextIndex;
+    });
   };
 
   if (loading) {

@@ -1,0 +1,638 @@
+[
+  {
+    "question": "She _____ to school every day.",
+    "explanation": "With the third-person singular subject \"she\", the verb \"go\" becomes \"goes\" in the Present Simple.",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "go", "correct": false },
+      { "answer": "goes", "correct": true },
+      { "answer": "going", "correct": false },
+      { "answer": "gone", "correct": false }
+    ]
+  },
+  {
+    "question": "I _____ coffee every morning.",
+    "explanation": "With the subject \"I\", use the base form \"drink\" in the Present Simple.",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "drinks", "correct": false },
+      { "answer": "drinking", "correct": false },
+      { "answer": "drink", "correct": true },
+      { "answer": "drank", "correct": false }
+    ]
+  },
+  {
+    "question": "Tom _____ football on Sundays.",
+    "explanation": "The subject \"Tom\" is third-person singular, so \"play\" becomes \"plays\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "play", "correct": false },
+      { "answer": "plays", "correct": true },
+      { "answer": "playing", "correct": false },
+      { "answer": "played", "correct": false }
+    ]
+  },
+  {
+    "question": "They _____ in a small apartment.",
+    "explanation": "With the plural subject \"they\", use the base form \"live\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "lives", "correct": false },
+      { "answer": "living", "correct": false },
+      { "answer": "live", "correct": true },
+      { "answer": "lived", "correct": false }
+    ]
+  },
+  {
+    "question": "My brother _____ English very well.",
+    "explanation": "The subject \"my brother\" is third-person singular, so \"speak\" becomes \"speaks\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "speak", "correct": false },
+      { "answer": "speaks", "correct": true },
+      { "answer": "speaking", "correct": false },
+      { "answer": "spoke", "correct": false }
+    ]
+  },
+  {
+    "question": "We _____ dinner at seven o'clock.",
+    "explanation": "With the subject \"we\", use the base form \"have\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "has", "correct": false },
+      { "answer": "have", "correct": true },
+      { "answer": "having", "correct": false },
+      { "answer": "had", "correct": false }
+    ]
+  },
+  {
+    "question": "The sun _____ in the east.",
+    "explanation": "This is a general fact. With the singular subject \"the sun\", use \"rises\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "rise", "correct": false },
+      { "answer": "rises", "correct": true },
+      { "answer": "rising", "correct": false },
+      { "answer": "rose", "correct": false }
+    ]
+  },
+  {
+    "question": "Water _____ at 100 degrees Celsius.",
+    "explanation": "This is a scientific fact. \"Water\" is singular, so the verb takes the third-person singular form \"boils\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "boil", "correct": false },
+      { "answer": "boils", "correct": true },
+      { "answer": "boiling", "correct": false },
+      { "answer": "boiled", "correct": false }
+    ]
+  },
+  {
+    "question": "Sarah _____ TV every evening.",
+    "explanation": "The subject \"Sarah\" is third-person singular, so \"watch\" becomes \"watches\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "watch", "correct": false },
+      { "answer": "watches", "correct": true },
+      { "answer": "watching", "correct": false },
+      { "answer": "watched", "correct": false }
+    ]
+  },
+  {
+    "question": "The children _____ to school by bus.",
+    "explanation": "\"Children\" is plural, so use the base form \"go\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "go", "correct": true },
+      { "answer": "goes", "correct": false },
+      { "answer": "going", "correct": false },
+      { "answer": "went", "correct": false }
+    ]
+  },
+  {
+    "question": "He _____ his homework after dinner.",
+    "explanation": "The subject \"he\" is third-person singular, so \"do\" becomes \"does\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "do", "correct": false },
+      { "answer": "does", "correct": true },
+      { "answer": "doing", "correct": false },
+      { "answer": "did", "correct": false }
+    ]
+  },
+  {
+    "question": "My parents _____ in Hanoi.",
+    "explanation": "\"My parents\" is plural, so the correct form is \"live\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "lives", "correct": false },
+      { "answer": "live", "correct": true },
+      { "answer": "living", "correct": false },
+      { "answer": "lived", "correct": false }
+    ]
+  },
+  {
+    "question": "The train _____ at 8:30 every morning.",
+    "explanation": "\"The train\" is singular, so the verb \"leave\" takes the third-person singular form \"leaves\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "leave", "correct": false },
+      { "answer": "leaves", "correct": true },
+      { "answer": "leaving", "correct": false },
+      { "answer": "left", "correct": false }
+    ]
+  },
+  {
+    "question": "I _____ to music before going to bed.",
+    "explanation": "With \"I\", use the base form \"listen\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "listens", "correct": false },
+      { "answer": "listen", "correct": true },
+      { "answer": "listening", "correct": false },
+      { "answer": "listened", "correct": false }
+    ]
+  },
+  {
+    "question": "Does your sister _____ tennis?",
+    "explanation": "After the auxiliary \"does\", use the base form of the main verb: \"play\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "plays", "correct": false },
+      { "answer": "play", "correct": true },
+      { "answer": "playing", "correct": false },
+      { "answer": "played", "correct": false }
+    ]
+  },
+  {
+    "question": "Do they _____ breakfast at home?",
+    "explanation": "After \"do\", use the base form \"eat\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "eats", "correct": false },
+      { "answer": "eat", "correct": true },
+      { "answer": "eating", "correct": false },
+      { "answer": "ate", "correct": false }
+    ]
+  },
+  {
+    "question": "He _____ like spicy food.",
+    "explanation": "For a negative sentence with \"he\", use \"does not\" or \"doesn't\" followed by the base verb \"like\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "don't", "correct": false },
+      { "answer": "doesn't", "correct": true },
+      { "answer": "isn't", "correct": false },
+      { "answer": "not", "correct": false }
+    ]
+  },
+  {
+    "question": "We _____ go to work on Sundays.",
+    "explanation": "With \"we\", the negative auxiliary is \"don't\", followed by the base verb \"go\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "doesn't", "correct": false },
+      { "answer": "don't", "correct": true },
+      { "answer": "aren't", "correct": false },
+      { "answer": "not", "correct": false }
+    ]
+  },
+  {
+    "question": "She _____ breakfast before work.",
+    "explanation": "The subject \"she\" is third-person singular, so \"have\" becomes \"has\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "have", "correct": false },
+      { "answer": "has", "correct": true },
+      { "answer": "having", "correct": false },
+      { "answer": "had", "correct": false }
+    ]
+  },
+  {
+    "question": "Birds _____ in the sky.",
+    "explanation": "\"Birds\" is plural, so use the base form \"fly\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "flies", "correct": false },
+      { "answer": "fly", "correct": true },
+      { "answer": "flying", "correct": false },
+      { "answer": "flew", "correct": false }
+    ]
+  },
+  {
+    "question": "My father _____ to work at 7 a.m.",
+    "explanation": "\"My father\" is third-person singular, so \"go\" becomes \"goes\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "go", "correct": false },
+      { "answer": "goes", "correct": true },
+      { "answer": "going", "correct": false },
+      { "answer": "went", "correct": false }
+    ]
+  },
+  {
+    "question": "I _____ understand this question.",
+    "explanation": "For a negative sentence with \"I\", use \"do not\" or \"don't\" followed by the base verb.",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "doesn't", "correct": false },
+      { "answer": "don't", "correct": true },
+      { "answer": "am not", "correct": false },
+      { "answer": "not", "correct": false }
+    ]
+  },
+  {
+    "question": "_____ your brother work here?",
+    "explanation": "Questions with a third-person singular subject use the auxiliary \"does\" followed by the base verb.",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "Do", "correct": false },
+      { "answer": "Does", "correct": true },
+      { "answer": "Is", "correct": false },
+      { "answer": "Are", "correct": false }
+    ]
+  },
+  {
+    "question": "_____ you usually walk to work?",
+    "explanation": "Questions with the subject \"you\" use the auxiliary \"do\".",
+    "difficulty": "EASY",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "Does", "correct": false },
+      { "answer": "Do", "correct": true },
+      { "answer": "Are", "correct": false },
+      { "answer": "Is", "correct": false }
+    ]
+  },
+  {
+    "question": "She always _____ her room on Saturday.",
+    "explanation": "The subject \"she\" requires the third-person singular form \"cleans\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "clean", "correct": false },
+      { "answer": "cleans", "correct": true },
+      { "answer": "cleaning", "correct": false },
+      { "answer": "cleaned", "correct": false }
+    ]
+  },
+  {
+    "question": "John rarely _____ late for meetings.",
+    "explanation": "The subject \"John\" is singular, so the verb \"arrive\" becomes \"arrives\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "arrive", "correct": false },
+      { "answer": "arrives", "correct": true },
+      { "answer": "arriving", "correct": false },
+      { "answer": "arrived", "correct": false }
+    ]
+  },
+  {
+    "question": "My mother _____ vegetables every day.",
+    "explanation": "The singular subject \"my mother\" requires the third-person singular form \"buys\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "buy", "correct": false },
+      { "answer": "buys", "correct": true },
+      { "answer": "buying", "correct": false },
+      { "answer": "bought", "correct": false }
+    ]
+  },
+  {
+    "question": "The museum _____ at 9 a.m. every day.",
+    "explanation": "\"The museum\" is singular, so \"open\" becomes \"opens\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "open", "correct": false },
+      { "answer": "opens", "correct": true },
+      { "answer": "opening", "correct": false },
+      { "answer": "opened", "correct": false }
+    ]
+  },
+  {
+    "question": "How often _____ Lisa visit her grandparents?",
+    "explanation": "\"Lisa\" is third-person singular, so the question uses \"does\" followed by the base verb \"visit\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "do", "correct": false },
+      { "answer": "does", "correct": true },
+      { "answer": "is", "correct": false },
+      { "answer": "are", "correct": false }
+    ]
+  },
+  {
+    "question": "Where _____ your parents live?",
+    "explanation": "The subject \"your parents\" is plural, so the question uses \"do\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "does", "correct": false },
+      { "answer": "do", "correct": true },
+      { "answer": "is", "correct": false },
+      { "answer": "are", "correct": false }
+    ]
+  },
+  {
+    "question": "The Earth _____ around the Sun.",
+    "explanation": "This is a scientific fact. \"The Earth\" is singular, so use \"moves\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "move", "correct": false },
+      { "answer": "moves", "correct": true },
+      { "answer": "moving", "correct": false },
+      { "answer": "moved", "correct": false }
+    ]
+  },
+  {
+    "question": "Ice _____ when the temperature rises above 0°C.",
+    "explanation": "This describes a general scientific fact. The singular subject \"ice\" takes \"melts\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "melt", "correct": false },
+      { "answer": "melts", "correct": true },
+      { "answer": "melting", "correct": false },
+      { "answer": "melted", "correct": false }
+    ]
+  },
+  {
+    "question": "My sister never _____ meat.",
+    "explanation": "The subject \"my sister\" is third-person singular, so \"eat\" becomes \"eats\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "eat", "correct": false },
+      { "answer": "eats", "correct": true },
+      { "answer": "eating", "correct": false },
+      { "answer": "ate", "correct": false }
+    ]
+  },
+  {
+    "question": "We usually _____ our grandparents at the weekend.",
+    "explanation": "The subject \"we\" takes the base form \"visit\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "visits", "correct": false },
+      { "answer": "visit", "correct": true },
+      { "answer": "visiting", "correct": false },
+      { "answer": "visited", "correct": false }
+    ]
+  },
+  {
+    "question": "He _____ his emails before breakfast.",
+    "explanation": "\"He\" is third-person singular, so \"check\" becomes \"checks\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "check", "correct": false },
+      { "answer": "checks", "correct": true },
+      { "answer": "checking", "correct": false },
+      { "answer": "checked", "correct": false }
+    ]
+  },
+  {
+    "question": "This machine _____ very little electricity.",
+    "explanation": "\"This machine\" is singular, so the verb \"use\" becomes \"uses\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "use", "correct": false },
+      { "answer": "uses", "correct": true },
+      { "answer": "using", "correct": false },
+      { "answer": "used", "correct": false }
+    ]
+  },
+  {
+    "question": "The teacher _____ us homework every Friday.",
+    "explanation": "The singular subject \"the teacher\" requires \"gives\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "give", "correct": false },
+      { "answer": "gives", "correct": true },
+      { "answer": "giving", "correct": false },
+      { "answer": "gave", "correct": false }
+    ]
+  },
+  {
+    "question": "Sarah doesn't _____ spicy food.",
+    "explanation": "After the auxiliary \"doesn't\", use the base form \"like\", not \"likes\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "likes", "correct": false },
+      { "answer": "like", "correct": true },
+      { "answer": "liking", "correct": false },
+      { "answer": "liked", "correct": false }
+    ]
+  },
+  {
+    "question": "My friends don't _____ much television.",
+    "explanation": "After \"don't\", use the base form \"watch\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "watches", "correct": false },
+      { "answer": "watch", "correct": true },
+      { "answer": "watching", "correct": false },
+      { "answer": "watched", "correct": false }
+    ]
+  },
+  {
+    "question": "Why does Mark _____ so early every morning?",
+    "explanation": "After \"does\", the main verb must remain in its base form: \"get\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "gets", "correct": false },
+      { "answer": "get", "correct": true },
+      { "answer": "getting", "correct": false },
+      { "answer": "got", "correct": false }
+    ]
+  },
+  {
+    "question": "The library _____ at 6 p.m. on weekdays.",
+    "explanation": "\"The library\" is singular, so the correct third-person singular form is \"closes\".",
+    "difficulty": "NORMAL",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "close", "correct": false },
+      { "answer": "closes", "correct": true },
+      { "answer": "closing", "correct": false },
+      { "answer": "closed", "correct": false }
+    ]
+  },
+  {
+    "question": "Neither the manager nor the assistant _____ the office on Sundays.",
+    "explanation": "The nearest subject, \"the assistant\", is singular, so the Present Simple verb is \"opens\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "open", "correct": false },
+      { "answer": "opens", "correct": true },
+      { "answer": "opening", "correct": false },
+      { "answer": "opened", "correct": false }
+    ]
+  },
+  {
+    "question": "Everyone in the class _____ a dictionary.",
+    "explanation": "\"Everyone\" is grammatically singular, so the verb must be \"has\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "have", "correct": false },
+      { "answer": "has", "correct": true },
+      { "answer": "having", "correct": false },
+      { "answer": "had", "correct": false }
+    ]
+  },
+  {
+    "question": "Each of these machines _____ regularly.",
+    "explanation": "\"Each\" is singular, so it takes the third-person singular verb \"requires\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "require", "correct": false },
+      { "answer": "requires", "correct": true },
+      { "answer": "requiring", "correct": false },
+      { "answer": "required", "correct": false }
+    ]
+  },
+  {
+    "question": "What _____ your company specialize in?",
+    "explanation": "\"Your company\" is singular, so use \"does\" followed by the base verb \"specialize\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "do", "correct": false },
+      { "answer": "does", "correct": true },
+      { "answer": "is", "correct": false },
+      { "answer": "are", "correct": false }
+    ]
+  },
+  {
+    "question": "The quality of these products _____ every year.",
+    "explanation": "The main subject is \"the quality\", which is singular. Therefore, use \"improves\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "improve", "correct": false },
+      { "answer": "improves", "correct": true },
+      { "answer": "improving", "correct": false },
+      { "answer": "improved", "correct": false }
+    ]
+  },
+  {
+    "question": "One of my colleagues _____ to work by bicycle.",
+    "explanation": "The subject is \"one\", which is singular. Therefore, use \"cycles\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "cycle", "correct": false },
+      { "answer": "cycles", "correct": true },
+      { "answer": "cycling", "correct": false },
+      { "answer": "cycled", "correct": false }
+    ]
+  },
+  {
+    "question": "The number of students in this class _____ every year.",
+    "explanation": "The subject is \"the number\", which is singular, so the correct verb is \"increases\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "increase", "correct": false },
+      { "answer": "increases", "correct": true },
+      { "answer": "increasing", "correct": false },
+      { "answer": "increased", "correct": false }
+    ]
+  },
+  {
+    "question": "What time _____ the first bus usually arrive?",
+    "explanation": "\"The first bus\" is singular, so the question requires \"does\" followed by the base verb \"arrive\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "do", "correct": false },
+      { "answer": "does", "correct": true },
+      { "answer": "is", "correct": false },
+      { "answer": "are", "correct": false }
+    ]
+  },
+  {
+    "question": "Neither of my brothers _____ coffee.",
+    "explanation": "\"Neither\" is treated as singular in standard formal English, so use \"drinks\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "drink", "correct": false },
+      { "answer": "drinks", "correct": true },
+      { "answer": "drinking", "correct": false },
+      { "answer": "drank", "correct": false }
+    ]
+  },
+  {
+    "question": "The information on this website _____ regularly.",
+    "explanation": "\"Information\" is an uncountable singular noun, so the correct verb is \"changes\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "change", "correct": false },
+      { "answer": "changes", "correct": true },
+      { "answer": "changing", "correct": false },
+      { "answer": "changed", "correct": false }
+    ]
+  },
+  {
+    "question": "What _____ this word mean in English?",
+    "explanation": "\"This word\" is singular, so use \"does\" and then the base verb \"mean\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "do", "correct": false },
+      { "answer": "does", "correct": true },
+      { "answer": "is", "correct": false },
+      { "answer": "are", "correct": false }
+    ]
+  },
+  {
+    "question": "The manager, together with his assistants, _____ the weekly report.",
+    "explanation": "The main subject is \"the manager\", which is singular. The phrase \"together with his assistants\" does not change the subject number, so use \"prepares\".",
+    "difficulty": "HARD",
+    "topic": "Present Simple",
+    "answers": [
+      { "answer": "prepare", "correct": false },
+      { "answer": "prepares", "correct": true },
+      { "answer": "preparing", "correct": false },
+      { "answer": "prepared", "correct": false }
+    ]
+  }
+]

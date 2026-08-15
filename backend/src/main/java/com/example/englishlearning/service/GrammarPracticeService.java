@@ -7,6 +7,7 @@ import com.example.englishlearning.entity.GrammarAnswer;
 import com.example.englishlearning.entity.GrammarQuestion;
 import com.example.englishlearning.repository.GrammarAnswerRepository;
 import com.example.englishlearning.repository.GrammarQuestionRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +15,13 @@ import java.util.List;
 
 @Service
 public class GrammarPracticeService {
+
+    @Transactional(readOnly = true)
+    public List<Long> getQuestions() {
+        return grammarQuestionRepository.findAll(Sort.by(Sort.Direction.ASC, "id")).stream()
+                .map(GrammarQuestion::getId)
+                .toList();
+    }
 
     private final GrammarQuestionRepository grammarQuestionRepository;
     private final GrammarAnswerRepository grammarAnswerRepository;
