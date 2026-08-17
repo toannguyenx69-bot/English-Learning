@@ -1,5 +1,6 @@
 import React from 'react';
 import { Vocabulary } from '../api/vocabulary';
+import VocabularyPronunciation from './VocabularyPronunciation';
 
 type Props = {
   vocabulary: Vocabulary | null;
@@ -22,6 +23,10 @@ export default function VocabularyDetail({ vocabulary, loading, error, learned, 
     return <p>Select a vocabulary item to view details.</p>;
   }
 
+  const unsplashUrl = vocabulary.sourceUrl
+    ? `${vocabulary.sourceUrl}?utm_source=english-learning&utm_medium=referral&utm_campaign=api-credit`
+    : 'https://unsplash.com/?utm_source=english-learning&utm_medium=referral&utm_campaign=api-credit';
+
   return (
     <div style={{ border: '1px solid #d9d9d9', borderRadius: 8, padding: 20, background: '#fff' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
@@ -42,9 +47,69 @@ export default function VocabularyDetail({ vocabulary, loading, error, learned, 
         </button>
       </div>
 
+      {vocabulary.imageUrl ? (
+        <div style={{ margin: '16px 0' }}>
+          <img
+            src={vocabulary.imageUrl}
+            alt={vocabulary.word}
+            style={{
+              width: '100%',
+              maxHeight: 320,
+              objectFit: 'cover',
+              borderRadius: 8,
+              display: 'block',
+            }}
+          />
+          {(vocabulary.authorName || vocabulary.authorUrl) && (
+            <div style={{ marginTop: 8, fontSize: 13, color: '#555' }}>
+              Photo by{' '}
+              {vocabulary.authorUrl ? (
+                <a
+                  href={vocabulary.authorUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: '#2563eb' }}
+                >
+                  {vocabulary.authorName || 'Photographer'}
+                </a>
+              ) : (
+                <span>{vocabulary.authorName || 'Photographer'}</span>
+              )}{' '}
+              on{' '}
+              <a
+                href={unsplashUrl}
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: '#2563eb' }}
+              >
+                Unsplash
+              </a>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div
+          style={{
+            margin: '16px 0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: 140,
+            border: '1px dashed #d0d7de',
+            borderRadius: 8,
+            background: '#f6f8fa',
+            color: '#666',
+            fontSize: 14,
+          }}
+        >
+          No image available
+        </div>
+      )}
+
+      <VocabularyPronunciation vocabularyId={vocabulary.id} word={vocabulary.word} />
+
       <p><strong>Meaning:</strong> {vocabulary.meaning}</p>
       <p><strong>Part of speech:</strong> {vocabulary.partOfSpeech}</p>
-      {vocabulary.pronunciation && <p><strong>Pronunciation:</strong> {vocabulary.pronunciation}</p>}
       {vocabulary.example && <p><strong>Example:</strong> {vocabulary.example}</p>}
       <p><strong>Difficulty:</strong> {vocabulary.difficulty}</p>
     </div>

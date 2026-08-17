@@ -1,16 +1,21 @@
 package com.example.englishlearning.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(
@@ -44,6 +49,12 @@ public class Vocabulary {
 
     @Column(nullable = false, length = 20)
     private String difficulty;
+
+    @OneToMany(mappedBy = "vocabulary", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VocabularyImage> images = new ArrayList<>();
+
+    @OneToOne(mappedBy = "vocabulary", cascade = CascadeType.ALL, orphanRemoval = true)
+    private VocabularyPronunciation vocabularyPronunciation;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -130,6 +141,22 @@ public class Vocabulary {
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public List<VocabularyImage> getImages() {
+        return images;
+    }
+
+    public void setImages(List<VocabularyImage> images) {
+        this.images = images;
+    }
+
+    public VocabularyPronunciation getVocabularyPronunciation() {
+        return vocabularyPronunciation;
+    }
+
+    public void setVocabularyPronunciation(VocabularyPronunciation vocabularyPronunciation) {
+        this.vocabularyPronunciation = vocabularyPronunciation;
     }
 
     public LocalDateTime getCreatedAt() {

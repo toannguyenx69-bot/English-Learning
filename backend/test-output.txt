@@ -1,0 +1,65 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.example:english-learning-backend >----------------
+[INFO] Building english-learning-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ english-learning-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 4 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ english-learning-backend ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ english-learning-backend ---
+[INFO] skip non existing resourceDirectory D:\workspaces\java\English-Learning\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ english-learning-backend ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ english-learning-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.englishlearning.controller.VocabularyPronunciationControllerTest
+14:52:50.380 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.englishlearning.controller.VocabularyPronunciationControllerTest]: VocabularyPronunciationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:52:50.597 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.englishlearning.EnglishLearningApplication for test class com.example.englishlearning.controller.VocabularyPronunciationControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-08-16T14:52:51.278+07:00  INFO 5696 --- [           main] .c.VocabularyPronunciationControllerTest : Starting VocabularyPronunciationControllerTest using Java 17.0.12 with PID 5696 (started by Reverand Nguyen in D:\workspaces\java\English-Learning\backend)
+2026-08-16T14:52:51.283+07:00  INFO 5696 --- [           main] .c.VocabularyPronunciationControllerTest : No active profile set, falling back to 1 default profile: "default"
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-08-16T14:52:55.461+07:00  WARN 5696 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f11b745d-567c-439e-bdd7-d1773f199954
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-08-16T14:52:55.783+07:00  INFO 5696 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a54638b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d8f2eec, org.springframework.security.web.context.SecurityContextHolderFilter@5feb82b3, org.springframework.security.web.header.HeaderWriterFilter@9bf63d2, org.springframework.web.filter.CorsFilter@e886caf, org.springframework.security.web.csrf.CsrfFilter@2e1ba142, org.springframework.security.web.authentication.logout.LogoutFilter@71a2df1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@717a8a76, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@18811c42, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1d585fb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4fee14b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37cf91d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@571d0925, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1884e671, org.springframework.security.web.access.ExceptionTranslationFilter@5d9bb69b, org.springframework.security.web.access.intercept.AuthorizationFilter@73da7f08]
+2026-08-16T14:52:55.905+07:00  INFO 5696 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-08-16T14:52:55.905+07:00  INFO 5696 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-08-16T14:52:55.912+07:00  INFO 5696 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 7 ms
+2026-08-16T14:52:56.148+07:00  INFO 5696 --- [           main] .c.VocabularyPronunciationControllerTest : Started VocabularyPronunciationControllerTest in 5.409 seconds (process running for 7.034)
+2026-08-16T14:52:56.361+07:00  WARN 5696 --- [           main] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/v1/vocabularies/123/pronunciation' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.629 s -- in com.example.englishlearning.controller.VocabularyPronunciationControllerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.363 s
+[INFO] Finished at: 2026-08-16T14:52:56+07:00
+[INFO] ------------------------------------------------------------------------

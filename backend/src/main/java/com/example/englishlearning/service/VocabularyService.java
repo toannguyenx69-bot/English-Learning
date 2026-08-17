@@ -4,7 +4,11 @@ import com.example.englishlearning.dto.VocabularyCreateRequest;
 import com.example.englishlearning.dto.VocabularyResponse;
 import com.example.englishlearning.dto.VocabularyUpdateRequest;
 import com.example.englishlearning.entity.Vocabulary;
+import com.example.englishlearning.entity.VocabularyImage;
+import com.example.englishlearning.repository.VocabularyImageRepository;
 import com.example.englishlearning.repository.VocabularyRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,10 +20,22 @@ import java.util.Optional;
 @Service
 public class VocabularyService {
 
-    private final VocabularyRepository vocabularyRepository;
+    private static final Logger log = LoggerFactory.getLogger(VocabularyService.class);
 
-    public VocabularyService(VocabularyRepository vocabularyRepository) {
+    private final VocabularyRepository vocabularyRepository;
+    private final VocabularyImageRepository vocabularyImageRepository;
+    private final UnsplashService unsplashService;
+
+    // public VocabularyService(VocabularyRepository vocabularyRepository) {
+    //     this(vocabularyRepository, null, null);
+    // }
+
+    public VocabularyService(VocabularyRepository vocabularyRepository,
+                            VocabularyImageRepository vocabularyImageRepository,
+                            UnsplashService unsplashService) {
         this.vocabularyRepository = vocabularyRepository;
+        this.vocabularyImageRepository = vocabularyImageRepository;
+        this.unsplashService = unsplashService;
     }
 
     public VocabularyResponse createVocabulary(VocabularyCreateRequest request) {
@@ -41,9 +57,45 @@ public class VocabularyService {
         return toResponse(saved);
     }
 
-    public VocabularyResponse getVocabularyById(Long id) {
-        Vocabulary vocabulary = vocabularyRepository.findById(id)
+    private void ensurePrimaryImage(Vocabulary vocabulary) {
+        if (vocabulary == null || vocabularyImageRepository == null || unsplashService == null) {
+            return;
+        }
+
+        if (vocabularyImageRepository.findByVocabularyAndIsPrimaryTrue(vocabulary).isPresent()) {
+            return;
+        }
+
+        try {
+            UnsplashService.UnsplashSearchResult result = unsplashService.searchByWord(vocabulary.getWord());
+            if (result == null || !result.hasImage()) {
+                return;
+            }
+
+            VocabularyImage image = new VocabularyImage(
+                    vocabulary,
+                    "unsplash",
+                    result.getProviderPhotoId(),
+                    result.getImageUrl(),
+                    result.getAuthorName(),
+                    result.getAuthorUrl(),
+                    result.getSourceUrl(),
+                    true
+            );
+            vocabularyImageRepository.save(image);
+        } catch (Exception e) {
+            log.error("Unable to load Unsplash image for vocabulary '{}'", vocabulary.getWord(), e);
+        }
+    }
+
+    public Vocabulary getVocabularyEntity(Long id) {
+        return vocabularyRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Vocabulary not found"));
+    }
+
+    public VocabularyResponse getVocabularyById(Long id) {
+        Vocabulary vocabulary = getVocabularyEntity(id);
+        ensurePrimaryImage(vocabulary);
         return toResponse(vocabulary);
     }
 
@@ -92,6 +144,22 @@ public class VocabularyService {
     }
 
     private VocabularyResponse toResponse(Vocabulary vocabulary) {
+        String imageUrl = null;
+        String authorName = null;
+        String authorUrl = null;
+        String sourceUrl = null;
+
+        if (vocabularyImageRepository != null) {
+            Optional<VocabularyImage> primaryImage = vocabularyImageRepository.findByVocabularyAndIsPrimaryTrue(vocabulary);
+            if (primaryImage.isPresent()) {
+                VocabularyImage image = primaryImage.get();
+                imageUrl = image.getImageUrl();
+                authorName = image.getAuthorName();
+                authorUrl = image.getAuthorUrl();
+                sourceUrl = image.getSourceUrl();
+            }
+        }
+
         return new VocabularyResponse(
                 vocabulary.getId(),
                 vocabulary.getWord(),
@@ -100,6 +168,10 @@ public class VocabularyService {
                 vocabulary.getPartOfSpeech(),
                 vocabulary.getExample(),
                 vocabulary.getDifficulty(),
+                imageUrl,
+                authorName,
+                authorUrl,
+                sourceUrl,
                 vocabulary.getCreatedAt(),
                 vocabulary.getUpdatedAt()
         );

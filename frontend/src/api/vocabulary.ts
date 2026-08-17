@@ -8,6 +8,10 @@ export type Vocabulary = {
   partOfSpeech: string;
   example?: string | null;
   difficulty: string;
+  imageUrl?: string | null;
+  authorName?: string | null;
+  authorUrl?: string | null;
+  sourceUrl?: string | null;
   createdAt?: string;
   updatedAt?: string;
 };

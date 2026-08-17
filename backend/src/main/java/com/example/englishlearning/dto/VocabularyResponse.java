@@ -11,6 +11,10 @@ public class VocabularyResponse {
     private String partOfSpeech;
     private String example;
     private String difficulty;
+    private String imageUrl;
+    private String authorName;
+    private String authorUrl;
+    private String sourceUrl;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -20,6 +24,21 @@ public class VocabularyResponse {
     public VocabularyResponse(Long id, String word, String meaning, String pronunciation,
                               String partOfSpeech, String example, String difficulty,
                               LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this(id, word, meaning, pronunciation, partOfSpeech, example, difficulty,
+                null, null, null, null, createdAt, updatedAt);
+    }
+
+    public VocabularyResponse(Long id, String word, String meaning, String pronunciation,
+                              String partOfSpeech, String example, String difficulty,
+                              String imageUrl, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this(id, word, meaning, pronunciation, partOfSpeech, example, difficulty,
+                imageUrl, null, null, null, createdAt, updatedAt);
+    }
+
+    public VocabularyResponse(Long id, String word, String meaning, String pronunciation,
+                              String partOfSpeech, String example, String difficulty,
+                              String imageUrl, String authorName, String authorUrl, String sourceUrl,
+                              LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.word = word;
         this.meaning = meaning;
@@ -27,6 +46,10 @@ public class VocabularyResponse {
         this.partOfSpeech = partOfSpeech;
         this.example = example;
         this.difficulty = difficulty;
+        this.imageUrl = imageUrl;
+        this.authorName = authorName;
+        this.authorUrl = authorUrl;
+        this.sourceUrl = sourceUrl;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -85,6 +108,38 @@ public class VocabularyResponse {
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getAuthorUrl() {
+        return authorUrl;
+    }
+
+    public void setAuthorUrl(String authorUrl) {
+        this.authorUrl = authorUrl;
+    }
+
+    public String getSourceUrl() {
+        return sourceUrl;
+    }
+
+    public void setSourceUrl(String sourceUrl) {
+        this.sourceUrl = sourceUrl;
     }
 
     public LocalDateTime getCreatedAt() {

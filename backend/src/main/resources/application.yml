@@ -22,6 +22,16 @@ spring:
         # Hibernate dialect can be overridden by setting HIBERNATE_DIALECT
         dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.MySQL8Dialect}
 
+unsplash:
+  access-key: ${UNSPLASH_ACCESS_KEY:}
+  timeout-seconds: ${UNSPLASH_TIMEOUT_SECONDS:30}
+
+merriam-webster:
+  api:
+    base-url: ${MERRIAM_WEBSTER_API_BASE_URL:https://www.dictionaryapi.com/api/v3/references/learners/json}
+    key: ${MERRIAM_WEBSTER_API_KEY:}
+    timeout-seconds: ${MERRIAM_WEBSTER_API_TIMEOUT_SECONDS:10}
+
 jwt:
   secret: ${JWT_SECRET}
   expiration-ms: ${JWT_EXPIRATION_MS:86400000}
