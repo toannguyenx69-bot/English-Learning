@@ -1,8 +1,12 @@
 package com.example.englishlearning.controller;
 
 import com.example.englishlearning.dto.VocabularyCreateRequest;
+import com.example.englishlearning.dto.VocabularyImportPreviewResponse;
+import com.example.englishlearning.dto.VocabularyImportRequest;
+import com.example.englishlearning.dto.VocabularyImportResult;
 import com.example.englishlearning.dto.VocabularyResponse;
 import com.example.englishlearning.dto.VocabularyUpdateRequest;
+import com.example.englishlearning.service.VocabularyImportService;
 import com.example.englishlearning.service.VocabularyService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -16,16 +20,20 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/v1/vocabularies")
 public class VocabularyController {
 
     private final VocabularyService vocabularyService;
+    private final VocabularyImportService vocabularyImportService;
 
-    public VocabularyController(VocabularyService vocabularyService) {
+    public VocabularyController(VocabularyService vocabularyService, VocabularyImportService vocabularyImportService) {
         this.vocabularyService = vocabularyService;
+        this.vocabularyImportService = vocabularyImportService;
     }
 
     @GetMapping
@@ -63,5 +71,19 @@ public class VocabularyController {
     public ResponseEntity<Void> deleteVocabulary(@PathVariable Long id) {
         vocabularyService.deleteVocabulary(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/import/preview")
+    public ResponseEntity<VocabularyImportPreviewResponse> previewVocabularyImport(
+            @RequestPart("file") MultipartFile file) {
+        VocabularyImportPreviewResponse response = vocabularyImportService.previewExcelFile(file);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/import")
+    public ResponseEntity<VocabularyImportResult> importVocabularyFromExcel(
+            @RequestBody VocabularyImportRequest request) {
+        VocabularyImportResult response = vocabularyImportService.importSelectedItems(request);
+        return ResponseEntity.ok(response);
     }
 }

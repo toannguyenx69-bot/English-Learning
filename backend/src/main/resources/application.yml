@@ -42,6 +42,10 @@ jwt:
 # DB_USER=<user>
 # DB_PASSWORD=<password>
 
+pdf:
+  upload-dir: ./uploads/pdf
+  max-file-size: 10485760
+
 logging:
   level:
     org.springframework: INFO

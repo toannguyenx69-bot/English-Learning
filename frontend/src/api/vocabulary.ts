@@ -36,6 +36,29 @@ export type LearnedVocabulary = {
   createdAt?: string;
 };
 
+export type ImportRow = {
+  rowNumber?: number | null;
+  word?: string | null;
+  status?: string | null;
+  meaning?: string | null;
+  source?: string | null;
+  message?: string | null;
+};
+
+export type ImportPreviewResponse = {
+  totalRows: number;
+  newItems: ImportRow[];
+  existingItems: ImportRow[];
+  invalidItems: ImportRow[];
+};
+
+export type ImportResult = {
+  importedCount: number;
+  existingCount: number;
+  skippedCount: number;
+  message: string;
+};
+
 export async function getVocabularies(params?: {
   page?: number;
   size?: number;
@@ -71,5 +94,22 @@ export async function getLearnedProgress(): Promise<{
   progressPercent: number;
 }> {
   const response = await api.get('/api/v1/users/me/vocabularies/progress');
+  return response.data;
+}
+
+export async function previewVocabularyImport(file: File): Promise<ImportPreviewResponse> {
+  const formData = new FormData();
+  formData.append('file', file);
+
+  const response = await api.post<ImportPreviewResponse>('/api/v1/vocabularies/import/preview', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+  return response.data;
+}
+
+export async function importSelectedVocabularyItems(selectedItems: ImportRow[]): Promise<ImportResult> {
+  const response = await api.post<ImportResult>('/api/v1/vocabularies/import', { selectedItems });
   return response.data;
 }

@@ -4,10 +4,11 @@ import com.example.englishlearning.service.dictionary.DictionaryWordResult;
 import com.example.englishlearning.service.merriamwebster.MerriamWebsterEntry;
 import com.example.englishlearning.service.merriamwebster.MerriamWebsterPronunciation;
 import com.example.englishlearning.service.merriamwebster.MerriamWebsterSound;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -55,7 +56,7 @@ public class DictionaryApiService {
         String normalizedWord = word.trim();
 
         try {
-            List<MerriamWebsterEntry> entries = webClient.get()
+            String rawPayload = webClient.get()
                     .uri(uriBuilder -> {
                         uriBuilder.path("/{word}");
                         if (apiKey != null && !apiKey.isBlank()) {
@@ -73,16 +74,39 @@ public class DictionaryApiService {
                     })
                     .onStatus(HttpStatusCode::is5xxServerError, clientResponse ->
                             Mono.error(new DictionaryApiException("Merriam-Webster API server error: " + clientResponse.statusCode())))
-                    .bodyToMono(new ParameterizedTypeReference<List<MerriamWebsterEntry>>() {})
+                    .bodyToMono(String.class)
                     .timeout(Duration.ofSeconds(timeoutSeconds))
                     .block();
 
-            if (entries == null || entries.isEmpty()) {
+            if (rawPayload == null || rawPayload.isBlank()) {
                 return DictionaryWordResult.empty(normalizedWord, "MERRIAM_WEBSTER");
             }
 
-            MerriamWebsterEntry entry = entries.get(0);
-            return parseEntry(entry, normalizedWord);
+            try {
+                JsonNode rootNode = new ObjectMapper().readTree(rawPayload);
+                if (!rootNode.isArray()) {
+                    return DictionaryWordResult.empty(normalizedWord, "MERRIAM_WEBSTER");
+                }
+
+                MerriamWebsterEntry entry = null;
+                for (JsonNode node : rootNode) {
+                    if (node == null || !node.isObject()) {
+                        continue;
+                    }
+
+                    entry = new ObjectMapper().treeToValue(node, MerriamWebsterEntry.class);
+                    break;
+                }
+
+                if (entry == null) {
+                    return DictionaryWordResult.empty(normalizedWord, "MERRIAM_WEBSTER");
+                }
+
+                return parseEntry(entry, normalizedWord);
+            } catch (Exception e) {
+                log.warn("Merriam-Webster response could not be parsed for word '{}': {}", normalizedWord, e.getMessage());
+                return DictionaryWordResult.empty(normalizedWord, "MERRIAM_WEBSTER");
+            }
         } catch (DictionaryApiNotFoundException e) {
             log.warn("Merriam-Webster API returned 404 for word '{}': {}", normalizedWord, e.getMessage());
             return DictionaryWordResult.empty(normalizedWord, "MERRIAM_WEBSTER");

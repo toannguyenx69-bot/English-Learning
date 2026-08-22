@@ -20,7 +20,9 @@ export default function AppLayout() {
         <NavLink to="/dashboard" style={navLinkStyle}>Dashboard</NavLink>
         <NavLink to="/profile" style={navLinkStyle}>Profile</NavLink>
         <NavLink to="/vocabulary" style={navLinkStyle}>Vocabulary</NavLink>
+        <NavLink to="/vocabulary-import" style={navLinkStyle}>Import Vocabulary</NavLink>
         <NavLink to="/grammar" style={navLinkStyle}>Grammar</NavLink>
+        <NavLink to="/pdf-scanner" style={navLinkStyle}>PDF Scanner</NavLink>
         <button
           type="button"
           onClick={logout}

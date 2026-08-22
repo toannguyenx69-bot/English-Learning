@@ -158,6 +158,34 @@ class DictionaryApiServiceTest {
     }
 
     @Test
+    void searchWordIgnoresStringReferenceEntries() throws Exception {
+        MockWebServer server = new MockWebServer();
+        server.enqueue(new MockResponse()
+                .setHeader("Content-Type", "application/json")
+                .setBody("""
+                        [
+                          "wet through"
+                        ]
+                        """));
+        server.start();
+
+        try {
+            DictionaryApiService service = new DictionaryApiService(server.url("/").toString(), "test-key", 3,
+                    WebClient.builder());
+
+            DictionaryWordResult result = service.searchWord("wet through");
+
+            assertNotNull(result);
+            assertEquals("wet through", result.getWord());
+            assertNull(result.getIpa());
+            assertNull(result.getUsAudioUrl());
+            assertNull(result.getUkAudioUrl());
+        } finally {
+            server.shutdown();
+        }
+    }
+
+    @Test
     void searchWordHandlesTimeout() throws Exception {
         MockWebServer server = new MockWebServer();
         server.enqueue(new MockResponse().setBodyDelay(2, java.util.concurrent.TimeUnit.SECONDS)
